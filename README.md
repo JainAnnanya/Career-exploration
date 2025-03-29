@@ -31,6 +31,10 @@ Create a new virtual environment:
     $ source venv/bin/activate
     ```
 
+```
+cd server-python
+```
+
 Install the required Python packages:
 ```bash
 pip install -r requirements.txt
