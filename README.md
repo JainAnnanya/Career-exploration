@@ -55,3 +55,13 @@ python app.py
 ```
 
 The server will start on `localhost:9000`.
+
+### edit:
+
+to run frontend:
+
+```
+cd client-react
+npm install
+npm run start
+```
