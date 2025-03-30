@@ -1,7 +1,3 @@
-# Flask Gemini Chat API
-
-This application provides a web API using Flask to interact with the Google Generative AI Gemini API, designed to get you started building with Gemini's capabilities.
-
 ## Inspiration
 The prompt inspired us to help students navigate potential careers in an easy way. In today’s world, choosing the right career path can be overwhelming. People are often unsure about which career would be the best fit for them, especially when it comes to salary expectations and career growth potential. Our project aims to help users explore different career options, understand salary trends, and make informed decisions based on real-time data.
 
