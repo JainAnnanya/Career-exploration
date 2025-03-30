@@ -202,28 +202,22 @@ body {
 
 .model > p {
   position: relative;
-  /* display: inline; */
-  display: inline-block;
-  /* bottom: 3vh; */ /* REMOVE this */
+  display: inline;
+  bottom: 3vh;
   font-size: 1em;
-  /* margin-left: 15px; */ /* REMOVE this */
-  border-radius: 20px;
-  border-bottom-left-radius: 5px; /* *** ADD THIS *** Characteristic shape for left msg */
-  padding: 10px 15px;
-  background-color: #e0e4e9; /* Keep original model color */
+  margin-left: 15px;
+  border-radius: 25px;
+  padding: 0px 15px 0px 15px;
+  background-color: #e0e4e9;
   color: #000000;
-  border: solid 1px #9a9caa;
-  order: 1; /* *** ADD THIS *** Text bubble after icon (default, but explicit) */
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  hyphens: auto;
+  border: solid 1px #505261;
 }
 
 
 .message-input {
   display: flex;
   border: solid 1px #505261;
-  background-color: #e9e2de;
+  background-color: #ece2e2;
   border-radius: 30px;
   margin-bottom: 25px;
 }
@@ -275,18 +269,6 @@ body {
   flex-grow: 1;
   }
 
-.model > p {
-  position: relative;
-  bottom: 3vh;
-  font-size: 1em;
-  margin-left: 15px;
-  border-radius: 25px;
-  padding: 0px 15px 0px 15px;
-  background-color: #e0e4e9;
-  color: #000000;
-  border: solid 1px #9a9caa;
-}
-
 .tempResponse {
   padding: 5px;
   text-align: left;
@@ -317,14 +299,13 @@ body {
 }
 
 .toggle-btn {
- background-color: rgb(134, 167, 196);
- border: 1px solid #aaa;
+ background-color: #1657A2;
+ border: 1px solid #505261;
  border-radius: 99px;
  width: 50px;
  height: 28px;
  transition: background-color 0.1s ease, border-color 0.2s ease;
  cursor: pointer;
- box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.748);
  position: relative;
 }
 
