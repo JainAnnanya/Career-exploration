@@ -52,20 +52,23 @@ Add your [API key](https://ai.google.dev/gemini-api/docs/api-key) to the newly c
 
 ### Running the Application
 
+ ***make sure to put jobs_data.db in the same directory as app.py**
+
 Run the application with the following command:
 
 ```bash
+cd server-python
 python app.py
 ```
 
 The server will start on `localhost:9000`.
 
-### edit:
-
-to run frontend:
+### to run frontend:
 
 ```
 cd client-react
 npm install
 npm run start
 ```
+
+
