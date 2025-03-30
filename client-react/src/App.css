@@ -70,7 +70,55 @@ body {
   text-align: left;
   padding: 20px 10px 20px 10px;
   display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
+
+.title-with-logo {
+  display: flex; /* Arrange logo and H1 in a row */
+  align-items: center; /* Vertically align items in the middle */
+  gap: 8px; /* Add space between the logo and the H1 text */
+  margin-bottom: 4px; /* Add a little space below the logo/H1 row before the H2 */
+}
+
+.header-logo {
+  height: 30px; /* Adjust desired height */
+  width: auto; /* Maintain aspect ratio */
+  /* or specify a width: width: 30px; */
+  display: block; /* Good practice for images in flex */
+}
+
+  .chat-header > p {
+    position: relative;
+    display: inline-block;
+    margin-left: 10px;
+    bottom: 1px;
+    font-size: 2vw;
+    color: #4991e8;
+    padding: 10px;
+  }
+
+  .header-titles {
+    /* No specific flex needed here, h1/h2 stack by default */
+    margin: 0; /* Remove default margins if any */
+    flex-grow: 1; /* Allows titles to take up space if needed */
+    margin-right: 20px; /* Adds some space before the toggle controls */
+  }
+
+  .header-titles h2 {
+  margin: 0; /* Reset margin */
+  padding-left: calc(30px + 8px); /* Indent H2 to align with H1 text (logo width + gap) */
+                                  /* Adjust this value based on your logo size and gap */
+  font-size: 1.2em;
+  line-height: 1.2;
+}
+
+  .header-toggle-controls {
+    display: flex; /* Arrange text and button in a row */
+    align-items: center; /* Vertically center text and button */
+    gap: 10px; /* Space between the text and the button */
+    flex-shrink: 0; /* Prevent this group from shrinking */
+  }
 
 .chat-app {
   display: flex;
@@ -80,33 +128,96 @@ body {
 }
 
 .chat-area {
-  flex-grow: 2; 
+  flex-grow: 2;
   overflow-y: auto;
   padding: 10px;
-  padding-top: 6vw;
+  padding-top: 1vw; /* Reduced top padding slightly */
+  display: flex; /* *** ADD THIS *** */
+  flex-direction: column; /* *** ADD THIS *** Stack messages vertically */
+  gap: 15px; /* *** ADD THIS *** Spacing between messages */
 }
 
 .user {
-  margin-right: 2vw;
+  /* margin-right: 2vw; */ /* REMOVE or adjust this */
   padding: 5px;
-  border-radius: 25px;
-  text-align: left;
+  /* border-radius: 25px; */ /* Let the inner p handle bubble radius */
+  text-align: left; /* Keep text within bubble left-aligned */
   display: flex;
+  align-items: flex-start; /* Align icon/text bubble to the top */
+  align-self: flex-end; /* *** ADD THIS *** Align entire block to the right */
+  max-width: 80%; /* Prevent user message from taking full width */
+  margin-left: auto; /* *** ADD THIS (alternative/reinforcement for align-self) *** */
+}
+
+.user > img {
+  height: 30px;
+  width: 30px; /* Use fixed width */
+  min-width: 30px; /* Prevent shrinking */
+  border-radius: 50%;
+  /* flex-grow: 1; */ /* REMOVE this - don't let icon grow */
+  order: 1; /* *** ADD THIS *** Make icon appear after the text bubble */
+  margin-left: 10px; /* *** ADD THIS *** Space between text and icon */
+}
+
+.user > p {
+  position: relative; /* Keep relative */
+  /* display: inline; */ /* Change to inline-block or block */
+  display: inline-block; /* Allow padding/margin */
+  /* bottom: 3vh; */ /* REMOVE this - rely on flex alignment */
+  font-size: 1em;
+  /* margin-left: 15px; */ /* REMOVE this */
+  border-radius: 20px; /* Bubble shape */
+  border-bottom-right-radius: 5px; /* *** ADD THIS *** Characteristic shape for right msg */
+  padding: 10px 15px; /* Adjust padding */
+  background-color: #dcf8c6; /* Example user message color (like WhatsApp) */
+  color: #000000;
+  border: solid 1px #baddaf; /* Matching border */
+  order: 0; /* *** ADD THIS *** Make text bubble appear first */
+  word-wrap: break-word; /* Ensure long words break */
+  overflow-wrap: break-word; /* Better word breaking */
+  hyphens: auto; /* Optional: Allow hyphenation */
 }
 
 .model {
   padding: 5px;
-  margin-right: 2vw;
-  border-radius: 25px;
+  /* margin-right: 2vw; */ /* REMOVE or adjust this */
+  /* border-radius: 25px; */ /* Let the inner p handle bubble radius */
   text-align: left;
   display: flex;
+  align-items: flex-start; /* Align icon/text bubble to the top */
+  align-self: flex-start; /* *** ADD THIS (explicitly left) *** */
+  max-width: 80%; /* Prevent bot message from taking full width */
+  margin-right: auto; /* *** ADD THIS (alternative/reinforcement for align-self) *** */
+}
+
+.model > img {
+  height: 30px;
+  width: 30px; /* Use fixed width */
+  min-width: 30px; /* Prevent shrinking */
+  border-radius: 50%;
+  /* flex-grow: 1; */ /* REMOVE this */
+  order: 0; /* *** ADD THIS *** Icon first (default, but explicit) */
+  margin-right: 10px; /* *** ADD THIS *** Space between icon and text */
+}
+
+.model > p {
+  position: relative;
+  display: inline;
+  bottom: 3vh;
+  font-size: 1em;
+  margin-left: 15px;
+  border-radius: 25px;
+  padding: 0px 15px 0px 15px;
+  background-color: #e0e4e9;
+  color: #000000;
+  border: solid 1px #505261;
 }
 
 
 .message-input {
   display: flex;
   border: solid 1px #505261;
-  background-color: #e9e2de;
+  background-color: #ece2e2;
   border-radius: 30px;
   margin-bottom: 25px;
 }
@@ -130,20 +241,6 @@ body {
   border: none;
   font-size: 20px;
 }
-
-.chat-header > img {
-  height: 35px; 
-  width: 100px;
-  }
-
-.chat-header > p {
-    position: relative;
-    display: inline-block;
-    margin-left: 10px;
-    bottom: 1px;
-    font-size: 2vw;
-    color: #4991e8;
-  }
 
 .user > img {
   height: 30px; 
@@ -172,24 +269,14 @@ body {
   flex-grow: 1;
   }
 
-.model > p {
-  position: relative;
-  bottom: 3vh;
-  font-size: 1em;
-  margin-left: 15px;
-  border-radius: 25px;
-  padding: 0px 15px 0px 15px;
-  background-color: #e0e4e9;
-  color: #000000;
-  border: solid 1px #9a9caa;
-}
-
 .tempResponse {
   padding: 5px;
-  margin-right: 2vw;
-  border-radius: 25px;
   text-align: left;
   display: flex;
+  align-items: flex-start;
+  align-self: flex-start;
+  max-width: 80%;
+  margin-right: auto;
 }
 
 .tempResponse > p {
@@ -212,14 +299,13 @@ body {
 }
 
 .toggle-btn {
- background-color: rgb(134, 167, 196);
- border: 1px solid #aaa;
+ background-color: #1657A2;
+ border: 1px solid #505261;
  border-radius: 99px;
  width: 50px;
  height: 28px;
  transition: background-color 0.1s ease, border-color 0.2s ease;
  cursor: pointer;
- box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.748);
  position: relative;
 }
 
@@ -230,7 +316,7 @@ body {
   line-height: 30px;
   font-size: 1.1em;
   font-weight: 600;
-  color: #4991e6;
+  color: #1657A2;
  }
 
 .toggle-btn .thumb{
@@ -288,4 +374,16 @@ body {
   color: black;
   position: relative;
   left: 15px;
+}
+.initial-choices {
+  padding: 15px;
+  border-top: 1px solid #ccc;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.initial-choices button {
+  padding: 10px 15px;
+  cursor: pointer;
 }
