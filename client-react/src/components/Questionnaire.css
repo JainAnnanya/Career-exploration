@@ -1,0 +1,120 @@
+/* Questionnaire.css - Themed */
+
+.questionnaire-form {
+  padding: 20px; /* Increased padding */
+  /* Match input area background or use a neutral light gray */
+  background-color: #f8f8f8; /* Lighter neutral than body */
+  border-top: 1px solid #d1c1c1; /* Use scrollbar handle color for a subtle border */
+  font-family: 'Roboto', sans-serif; /* Ensure font consistency */
+  margin: 0 10px 15px 10px; /* Add some horizontal margin like chat area */
+  border-radius: 10px; /* Softer rounding */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+}
+
+.questionnaire-form h2 {
+  margin-top: 0;
+  margin-bottom: 20px; /* More space below title */
+  font-size: 1.4em; /* Slightly larger title */
+  color: #333; /* Dark gray for heading */
+  text-align: center; /* Center the title */
+  font-weight: 600; /* Make title slightly bolder */
+}
+
+.question-block {
+  margin-bottom: 20px;
+  padding: 15px; /* Good padding */
+  /* Use model message background and border */
+  background-color: #e0e4e9;
+  border: solid 1px #9a9caa;
+  /* Match message bubble rounding */
+  border-radius: 15px; /* Less than message bubbles for differentiation */
+}
+
+.question-block p strong {
+  display: block; /* Make question text block for spacing */
+  margin-bottom: 12px; /* Space between question and options */
+  font-size: 1.05em; /* Slightly larger question text */
+  color: #000000; /* Black text */
+  font-weight: 500; /* Medium weight */
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Spacing between radio options */
+}
+
+.option-label {
+  display: flex; /* Align radio and text */
+  align-items: center;
+  margin-bottom: 0; /* Remove default margin */
+  cursor: pointer;
+  padding: 10px 15px; /* Increase padding */
+  border-radius: 20px; /* Match user message rounding */
+  transition: background-color 0.2s ease;
+  background-color: #fdfdfd; /* Slightly off-white background for options */
+  border: 1px solid transparent; /* Placeholder for focus/hover */
+  color: #000000; /* Black text */
+}
+
+.option-label:hover {
+  background-color: #ece2e2; /* Match user message background on hover */
+}
+
+/* Style for the checked label */
+.option-label input[type="radio"]:checked + span {
+  font-weight: 500; /* Slightly bolder text when selected */
+}
+
+.option-label:has(input[type="radio"]:checked) {
+    border-color: #4991e8; /* Use header blue for border when checked */
+    background-color: #e7f0fa; /* Very light blue background when checked */
+}
+
+
+.option-label input[type="radio"] {
+  margin-right: 12px; /* More space next to radio */
+  cursor: pointer;
+  /* Try using accent-color for the radio button itself */
+  accent-color: #4991e8; /* Match header blue */
+  /* Optional: Custom radio appearance (more complex) */
+   width: 18px; /* Slightly larger radio */
+   height: 18px;
+}
+
+/* Wrap option text in a span for easier styling if needed */
+.option-label span {
+    flex-grow: 1; /* Allow text to take remaining space */
+}
+
+
+/* Style the submit button */
+.questionnaire-form button[type="submit"] {
+  display: block; /* Make button block level */
+  width: 60%; /* Control width */
+  margin: 25px auto 0 auto; /* Center button with top margin */
+  padding: 12px 20px; /* Generous padding */
+  /* Match header blue */
+  background-color: #4991e8;
+  color: white;
+  border: none;
+  /* Match input field rounding */
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 1.1em; /* Larger font size */
+  font-weight: 500;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.questionnaire-form button[type="submit"]:not(:disabled):hover {
+  background-color: #3a7bc8; /* Darker blue on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.questionnaire-form button[type="submit"]:disabled {
+  background-color: #aabbc4; /* Muted gray/blue when disabled */
+  color: #f0f0f0;
+  cursor: not-allowed;
+  box-shadow: none;
+}
