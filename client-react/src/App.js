@@ -104,7 +104,7 @@ function App() {
     } else {
       choiceText = "Start Chatting";
       nextState = 'chatting';
-      followUpBotMessage = { "role": "model", "parts": [{ "text": "Great, what's on your mind?" }] };
+      followUpBotMessage = { "role": "model", "parts": [{ "text": "Great! If you would like to learn about salaries from our database, provide a prompt in this format: (job) Salaries in (city). For example: Software Developer Salaries in New York" }] };
     }
 
     // Add user's choice to history
