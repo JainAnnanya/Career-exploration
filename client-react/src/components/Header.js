@@ -1,10 +1,21 @@
 import React from 'react';
-
+import logoduck from '../assets/logoduck.png';
+ 
 const Header = ({ toggled, setToggled }) => {
   return (
     <div className="chat-header">
-      <h1>The Career Quacker</h1>
-      <h2>Because even ducks need direction.</h2>
+      <div className="header-titles">
+      <div className="title-with-logo">
+          <img
+            src={logoduck} // Use the imported logo
+            alt="Career Quacker logo" // Descriptive alt text
+            className="header-logo" // Class for styling
+          />
+          <h1>The Career Quacker</h1>
+        </div>
+        <h2>Because even ducks need direction.</h2>
+      </div>
+      <div className="header-toggle-controls">
       <span className='toggle-text'>Stream Response</span>
       <button 
         className={`toggle-btn ${toggled ? "toggled": "stream response buttons"}`}
@@ -19,6 +30,7 @@ const Header = ({ toggled, setToggled }) => {
           )}
         </div>
       </button>
+      </div>
     </div>
   );
 };
