@@ -3,7 +3,8 @@ import React from 'react';
 const Header = ({ toggled, setToggled }) => {
   return (
     <div className="chat-header">
-      <h1>Career Navigation Chat App</h1>
+      <h1>The Career Quacker</h1>
+      <h2>Because even ducks need direction.</h2>
       <span className='toggle-text'>Stream Response</span>
       <button 
         className={`toggle-btn ${toggled ? "toggled": "stream response buttons"}`}
